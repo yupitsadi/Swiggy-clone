@@ -1,0 +1,33 @@
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .shimmer-box {
+    padding: 5px 5px 5px 5px;
+    width: 200px;
+    height: 350px;
+    margin: 10px;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+    background-size: 400% 400%;
+    animation: shimmer 2s infinite linear, fadeInOut 2s infinite alternate;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 400% 0%;
+    }
+  }
+  
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
