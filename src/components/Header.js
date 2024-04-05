@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Title = () => {
     return (
@@ -8,27 +9,22 @@ const Title = () => {
     );
 };
 
-const loggedInUser = ()=>{
-    return false;
-};
-
 export const Header = () =>{
-    const [isLogedIn, setisLogedIn] = useState([false]);
-
-    
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     return(
         <div className="header"> 
             <Title/>
             <div className="nav-items">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
+                    <Link to='/'>Home</Link>
+                    <Link to='/about'><li>About</li></Link>
+                    <Link to='/contact'><li>Contact</li></Link>
                     <li>Cart</li>
                 </ul>
             </div>
-            {isLogedIn ? <button onClick={()=>setisLogedIn(false)}>Login</button> :
-            <button onClick={()=>setisLogedIn(true)}>Logout</button>}
+            {isLoggedIn?(<button onClick={()=> setIsLoggedIn(false)}
+            > Logout</button>) : (<button onClick={()=>setIsLoggedIn(true)}>Login</button>)
+            }
         </div >
     );
 };

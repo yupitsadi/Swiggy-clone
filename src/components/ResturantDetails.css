@@ -1,0 +1,46 @@
+/* ResturantDetails.css */
+
+.check-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .deals-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .flash-card {
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .flash-card h3 {
+    margin-top: 0;
+  }
+  
+  .flash-card p {
+    margin: 10px 0;
+  }
+  
+  .flash-card button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .flash-card button:hover {
+    background-color: #0056b3;
+  }
+  .resturant-Deails-img {
+    float: right; /* Align image to the right */
+    margin-left: 10px; /* Add some space between image and text */
+  }

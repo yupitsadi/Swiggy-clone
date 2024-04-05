@@ -1,8 +1,7 @@
 import React from "react";
-import { RestrauntList } from "./Contants";
-import RestrauntCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
-import Shimmer from "./shimmer";
+import RestrauntCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 
 function filterData(searchInput, restaurant) {
   return restaurant.filter((restaurant) =>
@@ -12,8 +11,8 @@ function filterData(searchInput, restaurant) {
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);  
-  const [filteredrestaurants, setfilteredrestaurants] = useState([]);
-  const [searchInput, setsearchInput] = useState([]);
+  const [filteredrestaurants, setFilteredRestaurants] = useState([]);
+  const [searchInput, setSearchInput] = useState(""); 
 
   useEffect(() => {
     getRestaurants();
@@ -28,17 +27,17 @@ const Body = () => {
     setAllRestaurants(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    setfilteredrestaurants(
-        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-      );
+    setFilteredRestaurants(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   }
 
-  if(!allRestaurants) return null;  //to handel no restaurant  
+  if (!allRestaurants) return null; //to handle no restaurants  
 
-  if(filteredrestaurants?.length==0) return <h1>No Restaurant Found</h1>;   //to handel no restaurant in filter data 
+  // if (filteredrestaurants?.length === 0) return <h1>No Restaurant Found</h1>;   //to handle no restaurants in filtered data 
 
   return filteredrestaurants?.length === 0 ? (
-    <Shimmer />
+    <Shimmer/>
   ) : (
     <>
       <div className="search-container">
@@ -48,7 +47,7 @@ const Body = () => {
           type="text"
           value={searchInput}
           onChange={(e) => {
-            setsearchInput(e.target.value);
+            setSearchInput(e.target.value);
           }}
         />
         <button
@@ -56,7 +55,7 @@ const Body = () => {
           className="search-click"
           onClick={() => {
             const data = filterData(searchInput, allRestaurants);
-            setfilteredrestaurants(data);
+            setFilteredRestaurants(data);
           }}
         >
           Search
