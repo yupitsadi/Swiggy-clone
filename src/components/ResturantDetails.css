@@ -1,46 +1,119 @@
-/* ResturantDetails.css */
+/* RestaurantDetails.css */
 
 .check-box {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .deals-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .flash-card {
-    width: 200px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .flash-card h3 {
-    margin-top: 0;
-  }
-  
-  .flash-card p {
-    margin: 10px 0;
-  }
-  
-  .flash-card button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  .flash-card button:hover {
-    background-color: #0056b3;
-  }
-  .resturant-Deails-img {
-    float: right; /* Align image to the right */
-    margin-left: 10px; /* Add some space between image and text */
-  }
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.deals-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flash-card {
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.flash-card h3 {
+  margin-top: 0;
+}
+
+.flash-card p {
+  margin: 10px 0;
+}
+
+.flash-card button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.flash-card button:hover {
+  background-color: #0056b3;
+}
+
+.resturant-Deails-img {
+  float: right; /* Align image to the right */
+  margin-left: 10px; /* Add some space between image and text */
+  width: 150px; /* Adjust the width of the image */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+/* RestaurantDetails.css */
+
+/* General styles */
+.menu-container {
+  margin-top: 20px;
+}
+
+.menu-category {
+  margin-bottom: 20px;
+}
+
+.menu-category-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.menu-item-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Menu item styles */
+.menu-item {
+  background-color: #f9f9f9; /* Light background color */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.menu-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.menu-item-name {
+  font-weight: bold;
+  color: #333; /* Dark text color */
+}
+
+.menu-item-description {
+  margin-top: 5px;
+  color: #666; /* Medium text color */
+}
+
+.menu-item-price {
+  font-size: 0.9rem;
+  color: #888; /* Light text color */
+}
+
+/* Image styles */
+.menu-item-image {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu-item-img {
+  width: 100px;
+  height: auto;
+  margin-left: 20px; /* Increased space between image and text */
+  border-radius: 50%; /* Round image corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.menu-item-img:hover {
+  transform: scale(1.1); /* Scale up image on hover */
+}

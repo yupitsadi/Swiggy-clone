@@ -1,7 +1,9 @@
-import React from "react";
+   import React from "react";
 import { useState, useEffect } from "react";
 import RestrauntCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+import useOnline from "../utils/useOnline";
 
 function filterData(searchInput, restaurant) {
   return restaurant.filter((restaurant) =>
@@ -32,8 +34,13 @@ const Body = () => {
     );
   }
 
-  if (!allRestaurants) return null; //to handle no restaurants  
+  const isOnline = useOnline();
+  if(!isOnline){
+    return <h1>Hey check your internet connection</h1>;
+  }
 
+  if (!allRestaurants) return null; //to handle no restaurants  
+  
   // if (filteredrestaurants?.length === 0) return <h1>No Restaurant Found</h1>;   //to handle no restaurants in filtered data 
 
   return filteredrestaurants?.length === 0 ? (
@@ -63,7 +70,9 @@ const Body = () => {
       </div>
       <div className="resturant-list">
         {filteredrestaurants.map((restaurant, index) => (
+          <Link key={index} to={`/restaurant/${restaurant.info.id}`}>
           <RestrauntCard key={index} restaurant={restaurant} />
+          </Link> 
         ))}
       </div>
     </>
