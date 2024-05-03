@@ -20,7 +20,7 @@ const useOnline = () => {
             window.removeEventListener("online", handleOnline);
             window.removeEventListener("offline", handleOffline);
         };
-    }, []); // Empty dependency array to run effect only once
+    }, []); 
 
     return isOnline;
 };
