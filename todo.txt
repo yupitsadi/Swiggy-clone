@@ -1,0 +1,19 @@
+Header
+    -logo
+    - nav Items
+    - cart
+body
+    - search bar
+    -restrauntList
+        - resturantCard
+            - image
+            -name
+            - rating
+            - cusines
+footer
+     -link
+     - copyright
+        
+
+------------------------------------------------------------------------
+
